@@ -3,8 +3,20 @@
 # The generated `.rspec` file contains `--require spec_helper` which will cause
 # this file to always be loaded, without a need to explicitly require it in any
 # files.
-  require 'simplecov'
- SimpleCov.start 'rails'
+ require 'simplecov'
+  require 'simplecov-console'
+  SimpleCov.formatter = SimpleCov::Formatter::Console
+  SimpleCov.start 'rails' do
+    add_filter "app/jobs/application_job.rb"
+    add_filter "app/mailers/application_mailer.rb"
+    add_filter "app/channels/application_cable/channel.rb"
+    add_filter "app/channels/application_cable/connection.rb"
+    add_filter "app/controllers/users_controller.rb"
+  end
+
+  SimpleCov.at_exit do
+   SimpleCov.result.format!
+ end
 
 # Given that it is always loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file
