@@ -1,0 +1,19 @@
+inherit_gem:
+  rubocop-rails_config:
+    - config/rails.yml
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/StringLiteralsInInterpolation:
+  Enabled: false
+
+Style/IndentationConsistency:
+  EnforcedStyle: normal
+
+AllCops:
+  Include:
+    - 'app/controllers/**/*.rb'
+    - 'app/model/**/*.rb'
+    - 'app/view/**/*.rb'
+    - 'spec/**/*.rb'
