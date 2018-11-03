@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'd41f21fcadcaedd77703e97e777dc78d2d915b42740ddb348c1f9e94fc900a9723d658d99e408d59847721061c12d50bdfa5fbbb180c6583796f9d6516078c73'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -252,6 +252,7 @@ Devise.setup do |config|
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
+  config.scoped_views = true
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
